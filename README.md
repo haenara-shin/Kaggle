@@ -1,4 +1,22 @@
 # Kaggle
+
+```bash
+|-- 1_Structured_Predicting crystal structure from X-ray diffraction(completed_1/34)
+|-- 2_ObjectDection_SIIM-FISABIO-RSNA COVID-19 Detection(progressing_218/1165)
+|-- 3_TimeSeries_전력사용량예측_한국에너지공단(진행중_Unopened)
+|-- 4_TimeSeries_구내식당식사인원예측_LH(진행중_Unopened)
+|-- 5_Structured_주차수요예측_LH(진행중_Unopened)
+```
+
+```
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/haenara-shin/DACON.git
+git push -u origin main
+```
+
 - Repos. for Kaggle I have participated in. (not in-class Kaggle competition)
 - When you want to change and import the dataset from Kaggle notebooks to Colab notebooks, follow the below instructions.
 	(1) In Colab, 
@@ -22,4 +40,5 @@
 	```
 
 # List
-(1) [SIIM-FISABIO-RSNA COVID-19 Detection](https://www.kaggle.com/c/siim-covid19-detection/overview) - Progress
+(1) [Predicting crystal structure from X-ray diffraction](https://www.kaggle.com/c/nano281fa2020/overview) - Completed_1/34
+(2) [SIIM-FISABIO-RSNA COVID-19 Detection](https://www.kaggle.com/c/siim-covid19-detection/overview) - Progress
