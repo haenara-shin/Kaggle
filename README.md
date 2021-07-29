@@ -1,5 +1,4 @@
 # Kaggle
-
 ```bash
 |-- 1_Structured_Predicting crystal structure from X-ray diffraction(completed_1/34)
 |-- 2_ObjectDection_SIIM-FISABIO-RSNA COVID-19 Detection(progressing_218/1165)
@@ -16,7 +15,6 @@ git branch -M main
 git remote add origin https://github.com/haenara-shin/DACON.git
 git push -u origin main
 ```
-
 - Repos. for Kaggle I have participated in. (not in-class Kaggle competition)
 - When you want to change and import the dataset from Kaggle notebooks to Colab notebooks, follow the below instructions.
 	(1) In Colab, 
