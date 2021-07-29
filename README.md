@@ -1,6 +1,5 @@
 # Kaggle
 
-
 ```bash
 |-- 1_Structured_Predicting crystal structure from X-ray diffraction(completed_1/34)
 |-- 2_ObjectDection_SIIM-FISABIO-RSNA COVID-19 Detection(progressing_218/1165)
@@ -39,5 +38,5 @@ git push -u origin main
 	```
 
 # List
-(1) [Predicting crystal structure from X-ray diffraction](https://www.kaggle.com/c/nano281fa2020/overview) - Completed_1/34
-(2) [SIIM-FISABIO-RSNA COVID-19 Detection](https://www.kaggle.com/c/siim-covid19-detection/overview) - Progress
+1. [Predicting crystal structure from X-ray diffraction](https://www.kaggle.com/c/nano281fa2020/overview) - Completed_1/34
+2. [SIIM-FISABIO-RSNA COVID-19 Detection](https://www.kaggle.com/c/siim-covid19-detection/overview) - Progress
