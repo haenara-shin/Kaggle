@@ -37,6 +37,17 @@ git push -u origin main
 	df = pd.read_csv(GCS_PATH+'/train.csv')
 	```
 
+# Tips for Google Colab 
+- Open the developer tools in chrome or firefox, and then paste the below codes.
+```javascript (Prevent from disconnection in Google Colab)
+function ClickConnect(){
+console.log("Working"); 
+document.querySelector("colab-toolbar-button#connect").click() 
+}
+setInterval(ClickConnect,60000)
+```
+
+
 # List
 1. [Predicting crystal structure from X-ray diffraction](https://www.kaggle.com/c/nano281fa2020/overview) - Completed_1/34
 2. [SIIM-FISABIO-RSNA COVID-19 Detection](https://www.kaggle.com/c/siim-covid19-detection/overview) - Progress
