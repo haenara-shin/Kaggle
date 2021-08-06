@@ -122,3 +122,9 @@
 
 ### 총평
 - 사전학습 데이터에 성능이 좌우 되기 때문에 아직은 EfficientNetB#이 가장 현실적으로 보임.
+- [참고자료1_논문_정리](https://kmhana.tistory.com/27)
+- [참고자료2_vit-keras](https://github.com/faustomorales/vit-keras)
+- [참고자료3_vit_mlpmixer](https://github.com/google-research/vision_transformer)
+- [참고자료4_vit_finetuning_kaggle1](https://www.kaggle.com/raufmomin/vision-transformer-vit-fine-tuning)
+- [참고자료5_vit-kaggle2](https://www.kaggle.com/durbin164/tpu-visual-transformer-vit-keras-tf-inferance)
+- [참고자료6_vit-kaggle3](https://www.kaggle.com/durbin164/tpu-visual-transformer-vit-keras-tf)
