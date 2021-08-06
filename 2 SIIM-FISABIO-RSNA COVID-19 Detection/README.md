@@ -1,5 +1,12 @@
 ![SIIM-COVID19 Github Banner](https://user-images.githubusercontent.com/58493928/128546381-97883f11-a61a-411e-8497-3471d0aed890.png)
 
+```bash
+|-- EfficientNet.md
+|-- ViT(Vision-Transformer).md
+|-- MMDetection_BackBone_List.xlsx
+|-- (soon to be updated)
+```
+
 # [SIIM-FISABIO-RSNA COVID-19 Detection](https://www.kaggle.com/c/siim-covid19-detection/overview)
 - 2021.May.17 ~ 2021.August.09
 - Host
@@ -72,5 +79,4 @@
       - `id` - unique image identifier
       - `boxes` - bounding boxes in easily-readable dictionary format
       - `label` - the correct prediction label for the provided bounding boxes
-
-  - `kaggle competitions download -c siim-covid19-detection`
+- `kaggle competitions download -c siim-covid19-detection`.
