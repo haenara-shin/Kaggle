@@ -79,4 +79,4 @@
       - `id` - unique image identifier
       - `boxes` - bounding boxes in easily-readable dictionary format
       - `label` - the correct prediction label for the provided bounding boxes
-  - `kaggle competitions download -c siim-covid19-detection`.
+- `kaggle competitions download -c siim-covid19-detection`.
