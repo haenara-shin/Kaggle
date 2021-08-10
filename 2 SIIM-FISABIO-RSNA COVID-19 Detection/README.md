@@ -9,6 +9,7 @@
 
 # [SIIM-FISABIO-RSNA COVID-19 Detection](https://www.kaggle.com/c/siim-covid19-detection/overview)
 - 2021.May.17 ~ 2021.August.09
+  - Completed: 97/1324_Top 8% - Bronze medal
 - Host
   - FISABIO: The foundation for the promotion of health and biomedical research of Valencia Region
   - RSNA: Radiological Society of North America 
