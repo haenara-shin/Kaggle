@@ -4,7 +4,12 @@
 |-- EfficientNet.md
 |-- ViT(Vision-Transformer).md
 |-- MMDetection_BackBone_List.xlsx
-|-- (soon to be updated)
+|-- SIIM_COVID19_efnb7_2class_train-score(val_loss).xlsx
+|-- README.md
+|-- Description_How to.md
+|-- siim-covid19-selected_submission_(publicLB0.615-privateLB0.604).ipynb
+|-- siim-effnetv2-keras-study-train-fold7-epch25-[TPU CV AUC 0.812+].ipynb
+|-- SIIM-COVID19 Github Banner.png
 ```
 
 # [SIIM-FISABIO-RSNA COVID-19 Detection](https://www.kaggle.com/c/siim-covid19-detection/overview)
@@ -12,16 +17,20 @@
   - Completed: 97/1324_Top 8% - Bronze medal
 - Host
   - FISABIO: The foundation for the promotion of health and biomedical research of Valencia Region
-  - RSNA: Radiological Society of North America 
+  - RSNA: Radiological Society of North America
+- Goal
+  - Identify and localize COVID-19 abnormalities on chest radiographs.
+  - *Categorize the radiographs as negative for pneumonia or typical, indeterminate, or atypical for COVID-19.* 
 - Evaluation
-  - The challenge uses the standard PASCAL VOC 2010 mean Average Precision (mAP) at IoU > 0.5. 
+  - The challenge uses the standard `PASCAL VOC 2010 mean Average Precision (mAP) at IoU > 0.5`. 
   - In this competition, we are making predictions at both a study (multi-image) and image level.
-    - Study-level labels: Studies in the test set may contain more than one label. They are as follows:
+    - `Study-level` labels: Studies in the test set may contain more than one label (multi-label). They are as follows:
         ```
-        "negative", "typical", "indeterminate", "atypical"
+        "negative", "typical", "indeterminate", "atypical" 
+          - negative for pneumonia, or typical, indeterminate, or atypical for COVID-19
         ```
     - For each study in the test set, you should predict at least one of the above labels. The format for a given label's prediction would be a class ID from the above list, a confidence score, and 0 0 1 1 is a one-pixel bounding box.
-    - Image-level labels: Images in the test set may contain more than one object. For each object in a given test image, you must predict a class ID of "opacity", a `confidence` score, and bounding box in format `xmin` `ymin` `xmax` `ymax`. If you predict that there are NO objects in a given image, you should predict `none 1.0 0 0 1 1`, where `none` is the class ID for "No finding", 1.0 is the confidence, and `0 0 1 1` is a one-pixel bounding box.
+    - `Image-level` labels: Images in the test set may contain more than one object. For each object in a given test image, you must predict a class ID of "opacity", a `confidence` score, and bounding box in format `xmin` `ymin` `xmax` `ymax`. If you predict that there are NO objects in a given image, you should predict `none 1.0 0 0 1 1`, where `none` is the class ID for "No finding", 1.0 is the confidence, and `0 0 1 1` is a one-pixel bounding box.
 
   - Submission File: The submission file should contain a header and have the following format:
     ```
@@ -61,7 +70,7 @@
     'Negative for Pneumonia' 'Typical Appearance' 'Indeterminate Appearance' 'Atypical Appearance'
     ```
   - To make a prediction of one of the above labels, create a prediction string similar to the "none" class above: e.g. `atypical 1 0 0 1 1`
-  - The images are in DICOM format, which means they contain additional data that might be useful for visualizing and classifying.
+  - The images are in `DICOM format`(의료용 디지털 영상 및 통신 표준), which means they contain additional data that might be useful for visualizing and classifying.
 - Dataset information
   - The train dataset comprises 6,334 chest scans in DICOM format, which were de-identified to protect patient privacy. All images were labeled by a panel of experienced radiologists for the presence of opacities as well as overall appearance.
   - Note that all images are stored in paths with the form `study/series/image`. The `study` ID here relates directly to the study-level predictions, and the `image` ID is the ID used for image-level predictions. The hidden test dataset is of roughly the same scale as the training dataset.
