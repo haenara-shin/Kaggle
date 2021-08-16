@@ -10,6 +10,7 @@
 |-- siim-covid19-selected_submission_(publicLB0.615-privateLB0.604).ipynb
 |-- siim-effnetv2-keras-study-train-fold7-epch25-[TPU CV AUC 0.812+].ipynb
 |-- SIIM-COVID19 Github Banner.png
+|-- Faster-RCNN.md
 ```
 
 # [SIIM-FISABIO-RSNA COVID-19 Detection](https://www.kaggle.com/c/siim-covid19-detection/overview)
