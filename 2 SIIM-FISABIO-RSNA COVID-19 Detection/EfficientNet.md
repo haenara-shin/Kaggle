@@ -27,7 +27,7 @@
 3. Model scaling
    1. Depth(# of layers), Width(# of channels), Resolution(Image size) 고려
    2. Image size 증가는 더 높은 FLOPs
-   3. Depth와 Width는 CNN의 표현력과 관된됐지만, 어떻게 효율적으로 scaling 할 수 있을지 밝혀지지 않음. --> 실험!
+   3. Depth와 Width는 CNN의 표현력과 관련됐지만, 어떻게 효율적으로 scaling 할 수 있을지 밝혀지지 않음. --> 실험!
 
 ## Scaling up CNN
 - 기존의 성능 향상 방안: 대표적인 방법은 모델의 '크기'를 키우는 것. 하지만 '어떻게' 모델의 크기를 키울 것인가? 에 대한 연구 부족.
@@ -57,7 +57,7 @@
   - `Width`
     * 특징 1. 작은 모델의 사이즈를 키울 때 많이 사용됨.
     * 특징 2. 세밀한(fine-grained) feature를 capture 하기 위해 사용됨.
-    * 단점 1. Shallow 모델(layer가 낮은에서, 상위 레벨의 복합적인 feature를 파악하기 어려움.
+    * 단점 1. Shallow 모델(layer가 작은 모델)에서, 상위 레벨의 복합적인 feature를 파악하기 어려움.
     * 단점 2. Width가 넓어짐에 따라 빠르게 saturation 됨.
   - `Depth`
     * 장점: Capture Richer and More complex feature
