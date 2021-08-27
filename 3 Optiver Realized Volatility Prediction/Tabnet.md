@@ -12,6 +12,7 @@
     - [Attentive Transformer Code Snippets](#attentive-transformer-code-snippets)
   - [Semi-supervised Learning](#semi-supervised-learning)
   - [Code](#code)
+    - [Ref](#ref)
 #
 ## Introduction 
 - TabNet은 정형 데이터의 훈련에 맞게 설계된, `딥러닝 기반` 네트워크.
@@ -34,6 +35,29 @@
 #
 ## Encoder
 ### Encoder Overview
+- 인코더 구조
+  - <img width="671" alt="assets-ml--MMXoGIZpcHkxIKjt_fv--MMXoN3Xl7JkuUo9xRLn-tabnet1" src="https://user-images.githubusercontent.com/58493928/131177231-3b45b468-5845-4b08-8b83-06e8609b625c.png">
+- 인코더는 여러 decision step들로 구성됨.
+  - decision steps 내의 2 가지 주요 블록들 
+    > `Feature Transformer` & `Attentive Transformer`
+  - 각 decision step에서 가장 중요한 `output은 (sparse) Mask`
+1. `Feature transformer`블록에서 `임베딩(Embedding)`을 수행하고,
+2. `Attentive Transformer`블록에서 `trainable mask`를 생성함.
+    - 마스크의 활용도
+      1. Feature importance 계산
+      2. 이전 decision step의 feature에 곱해져서 `Masked feature` 생성
+           - Masked feature는 다음 decision step의 input feature가 되며, 이전 decision step에서 사용된 mask의 정보를 피드백 하기때문에 feature의 재사용 빈도를 제어할 수 있음.
+      3. 다음 decision step의 mask에서 적용될 `prior scale term` 계산
+    - ![스크린샷 2021-08-27 오전 11 42 38](https://user-images.githubusercontent.com/58493928/131174343-631b4b7a-00f3-442f-a006-ea5058e04ad7.png)
+      - Input feature의 dimension은 (# batch * # features). 매 decision step 마다 반복하기 전 Initial decision step(decision step 0) 에서는 별도의 mask feature 없이 BatchNormalization만 수행함.
+        - 실제로 구현된 BN은 Ghost BN임.(전체가 아닌 샘플링 데이터에 대해서는 BN 수행)
+      - Feature Transformer 블록에서 인코딩을 수행함.
+        - Step >= 1 인 경우, 인코딩된 결과에서 ReLU layer를 거쳐서 해당 step의 decision output을 생성함. 향후, 각 step의 decision output 결과를 합산하여 overall decision 임베딩($d_{out}$)을 생성할 수 있고, 이 임베딩이 FC layer를 거치면 최종 output (classification/regression 예측 결과, $\hat y$)이 산출됨.
+        - $d_{out} = \sum_{i=1}^{N_{steps}}$ReLU($d[i]$), $\hat y = W_{final}d_{out}$
+        - 또한, ReLU layer의 결과에서 # of hidden unit 채널의 값들을 모두 합산하여 해당 decision step의 Feature importance의 결과를 합산하면, 최종 Feature importance(feature attributes)를 산출할 수 있음.
+      - 인코딩된 결과는 Attentive Transformer 블록을 거쳐 mask를 생성함. Mask에 Feature를 곱하여 Feature selection이 수행되기 때문에 mask의 차원은 (# of batch * # of feture)임.
+        - Attentive Transformer 블록 내에서 FC -> BN -> Sparsemax 를 순차적으로 수행하면서 Mask를 생성함.
+      - Mask는 이전 decision step의 Feature와 곱하여 Masked feature를 생성함. Sparsemax 함수를 거쳤기 때문에 일반적인 tabular 데이터에서 수행하는 Hard feature selection이 아닌, `Soft feature selection`임. Masked feature는 다시 feature transformer로 연결되면서 decision step이 반복됨.
 #
 ### Feature Transformer
 #
@@ -92,7 +116,7 @@ if ni < self.num_decision_steps - 1:
 
 #
 ## Code
-- 구글의 공식 코드와 이를 개선한 Modified TabNet, [PyTorch-TabNet](https://github.com/dreamquark-ai/tabnet)이 가장 유명.
+- [구글의 공식 코드](https://github.com/google-research/google-research/blob/master/tabnet/tabnet_model.py)와 이를 개선한 Modified TabNet, [PyTorch-TabNet](https://github.com/dreamquark-ai/tabnet)이 가장 유명.
     ```python
     from pytorch_tabnet.tab_model import TabNetClassifier, TabNetRegressor
 
@@ -104,4 +128,4 @@ if ni < self.num_decision_steps - 1:
     preds = clf.predict(X_test)
     ```
 
-[Ref](https://housekdk.gitbook.io/ml/ml/tabular/tabnet-overview)
+### [Ref](https://housekdk.gitbook.io/ml/ml/tabular/tabnet-overview)
