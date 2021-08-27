@@ -3,20 +3,11 @@
 ```bash
 |-- README.md
 |-- TabNet.md (to be updated soon)
-# |-- ViT(Vision-Transformer).md
-# |-- MMDetection_BackBone_List.xlsx
-# |-- SIIM_COVID19_efnb7_2class_train-score(val_loss).xlsx
-# |-- README.md
-# |-- Description_How to.md
-# |-- siim-covid19-selected_submission_(publicLB0.615-privateLB0.604).ipynb
-# |-- siim-effnetv2-keras-study-train-fold7-epch25-[TPU CV AUC 0.812+].ipynb
-# |-- SIIM-COVID19 Github Banner.png
-# |-- Faster-RCNN.md
 ```
 
 # [Optiver Realized Volatility Prediction](https://www.kaggle.com/c/optiver-realized-volatility-prediction/overview/description)
 - 2021.Aug ~ 2021.Sept (Expected)
-  - Progress 
+  - Progress_18/2752 (Top 1%_2021 Aug. 27)
 - Host
   - Optiver: trading firm
 - Goal
