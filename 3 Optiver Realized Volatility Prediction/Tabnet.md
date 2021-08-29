@@ -60,10 +60,50 @@
       - Mask는 이전 decision step의 Feature와 곱하여 Masked feature를 생성함. Sparsemax 함수를 거쳤기 때문에 일반적인 tabular 데이터에서 수행하는 Hard feature selection이 아닌, `Soft feature selection`임. Masked feature는 다시 feature transformer로 연결되면서 decision step이 반복됨.
 #
 ### Feature Transformer
+- 4개의 GLU(Gate Linear Unit) 블록으로 구성됨.
+  - 각 GLU 블록은 FC -> BN -> GLU로 이루어짐.
+  - 첫 2개의 GLU 블록들을 묶어서 `shared 블록`이라고 함. 마지막 2개의 GLU 블록들을 묶어서 `decision block` 이라고 함.
+  - GLU 블록 간에는 skip-connection을 적용해서 gradient vanishing 현상을 개선함.
+    - GLU 함수는 수식에서도 알 수 있듯, 이전 레이어에서 나온 정보들을 제어 하는 역할을 하기 때문에 LSTM의 gate와 유사함.
+    - $GLU(x) = \sigma (x) \otimes x$
+      - $\otimes$ = Tensor product(outer product or Kronecker product)
+  - ![스크린샷 2021-08-27 오후 5 41 00](https://user-images.githubusercontent.com/58493928/131200674-19eac97d-7605-4e88-99fc-4deaeb2705c1.png)
 #
 ### Attentive Transformer
+- Feature transformer 블록에서 인코딩된 decision 정보는 attentive transformer 블록을 거쳐 `trainable mask`로 변환됨. 
+  - FC -> BN -> Sparsemax 를 거치면서 mask 생성
+- 이 mask는 `어떤 feature를 주로 사용할 것인지에 대한 정보가 내포`되어 있고, 그 정보는 다음 decision step에서 유용하게 쓰이기에 다음 decision step에서도 mask 정보가 재활용됨. 이전 decision step에서 사용한 mask를 얼마나 `재사용할지`를 relaxation factor인 $\gamma$ 로 조절할 수 있음(`prior scale term`)
+  - 이 prior scale term이 다음 decision step에서의 mask와 내적함으로써, step-wise sparse feature selection이 가능하게 됨.
+- 또한, mask 정보는 entropy term에 반영되어 훈련이 이루어짐.
+  - `sparsity regularization term`으로 loss function에 penalty term으로 가산되기 때문에 loss function의 backpropagation 시에 mask 내의 파라미터들이 업데이트 됨.
+- $M[i] = sparsemax(P[i-1] \cdot h_{i}(a[i-1]))$
+- $P[i] = \Pi_{j=1}^i (\gamma - M[j])$
+- $L_{sparse} = - \frac {1}{N_{step} \cdot B}\sum_{i=1}^{N_{step}}\sum_{b=1}^{B}\sum_{j=1}^{D}M_{bj}[i]log(M_{bj}[i]+\epsilon)$
+  - i = 현재 step, 
+  - $h_i$ = trainable function으로 FC & BN의 weight 파라미터
+  - $P[i]$ = i번째 step의 prior scale term,
+  - $a[i]$ = masked feature
+  - $M[i] \cdot f$ = 각 step의 masked feature (f $\in R^{BxD}$는 feature)
+  - Step 0에서는 $P[0] = 1^{B \times D}$로 초기화되며, semi-supervised learning 모드에서 결측값이 포함된다면 0으로 초기화됨. 
+  - $M[i]$는 feature selection으로 선택된 feature들의 sparsity를 컨트롤하기 위해 entropy term에 반영됨.
+- ![스크린샷 2021-08-29 오전 10 58 04](https://user-images.githubusercontent.com/58493928/131260583-16cdfc56-d9c5-48c9-836f-e258f1e4736c.png)
 #
 ### Sparsemax
+- Sparsemax activation 함수는 softmax에 sparsity를 강화한것이고 미분이 가능하며 sparse feature selection의 핵심적인 역할을 함
+  - NLP 도메인에서 활용되고, [Martins et al.(2016)](https://arxiv.org/abs/1602.02068)에서 소개됐음.
+  - 자세한 세부 설명 생략...
+  ```python
+  def sparsemax(z):
+      sum_all_z = sum(z)
+      z_sorted = sorted(z, reverse=True)
+      k = np.arange(len(z))
+      k_array = 1 + k * z_sorted
+      z_cumsum = np.cumsum(z_sorted) - z_sorted
+      k_selected = k_array > z_cumsum
+      k_max = np.where(k_selected)[0].max() + 1
+      threshold = (z_cumsum[k_max-1] - 1) / k_max
+      return np.maximum(z-threshold, 0)
+  ```
 #
 ### Attentive Transformer Code Snippets
 - 구글 공식 코드
@@ -113,10 +153,17 @@ if ni < self.num_decision_steps - 1:
 
 #
 ## Semi-supervised Learning
-
+- 위에서 설명했던 인코더에 곧바로 디코더를 연결하면 AutoEncoder 구조가 완성됨. 
+  - 별도의 정답 레이블 정보가 필요하지 않기 때문에 unsupervised learning 임. 
+  - 이를 적용해서 tabular 데이터에서 종종 보이는 결측값들을 대체할 수 있음.
+  - 결측치를 채운 데이터셋에 레이블 정보를 포함해서 supervised learning으로 fine-tuning 적용할 수 있음.
+  - ![스크린샷 2021-08-29 오전 11 48 57](https://user-images.githubusercontent.com/58493928/131261996-d77f54dd-1092-4a2b-bebb-b6759fc9cc1c.png)
+- Decoder의 각 decision step은 Feature transformer 블록 -> FC layer로 이루어져 있고, 각 decision step의 결과를 합산하면 재구성된 결과를 산출할 수 있음.
+  - ![스크린샷 2021-08-29 오전 11 49 12](https://user-images.githubusercontent.com/58493928/131262018-4ec3f85c-bd3b-4d77-b9c5-e4e9c6edf28d.png)
 #
 ## Code
 - [구글의 공식 코드](https://github.com/google-research/google-research/blob/master/tabnet/tabnet_model.py)와 이를 개선한 Modified TabNet, [PyTorch-TabNet](https://github.com/dreamquark-ai/tabnet)이 가장 유명.
+- Scikit-learn 과 유사함.
     ```python
     from pytorch_tabnet.tab_model import TabNetClassifier, TabNetRegressor
 

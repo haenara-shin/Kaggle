@@ -2,7 +2,7 @@
 
 ```bash
 |-- README.md
-|-- TabNet.md (to be updated soon)
+|-- TabNet.md
 ```
 
 # [Optiver Realized Volatility Prediction](https://www.kaggle.com/c/optiver-realized-volatility-prediction/overview/description)
