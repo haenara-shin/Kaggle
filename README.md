@@ -261,9 +261,11 @@ setInterval(ClickConnect,60000)
 
 	- Or, alternatively, you can simply run the Notebook using below command
 	```python
-	jupyter notebook --NotebookApp.max_buffer_size=your_desired_value
-	
+	jupyter notebook --NotebookApp.max_buffer_size=your_desired_value	
 	```
+#
+# Math expression in Latex
+- [Copy and paste](http://www.cs.put.poznan.pl/ksiek/latexmath.html)
 
 #
 # List
