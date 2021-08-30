@@ -8,7 +8,7 @@
 
 # [Optiver Realized Volatility Prediction](https://www.kaggle.com/c/optiver-realized-volatility-prediction/overview/description)
 - 2021.Aug ~ 2021.Sept (Expected)
-  - Progress_26/2752 (Top 1%_2021 Aug. 30)
+  - Progress_26/2895 (Top 1%_2021 Aug. 30)
 - Host
   - Optiver: trading firm
 - Goal
