@@ -1,13 +1,14 @@
-<!-- ![SIIM-COVID19 Github Banner](https://user-images.githubusercontent.com/58493928/128546381-97883f11-a61a-411e-8497-3471d0aed890.png) -->
+![스크린샷 2021-08-30 오전 8 39 50](https://user-images.githubusercontent.com/58493928/131365851-7d1b509e-3715-4dc5-b90a-7859995c3960.png)
 
 ```bash
 |-- README.md
 |-- TabNet.md
+|-- Realized Volitility(ref1).md
 ```
 
 # [Optiver Realized Volatility Prediction](https://www.kaggle.com/c/optiver-realized-volatility-prediction/overview/description)
 - 2021.Aug ~ 2021.Sept (Expected)
-  - Progress_18/2752 (Top 1%_2021 Aug. 27)
+  - Progress_26/2752 (Top 1%_2021 Aug. 30)
 - Host
   - Optiver: trading firm
 - Goal

@@ -1,0 +1,1 @@
+[Ref1](https://dspyt.com/advanced-realized-volatility-and-quarticity/)
