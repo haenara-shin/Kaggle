@@ -1,10 +1,11 @@
 # Kaggle
 
 ```bash
-|-- 1_Structured_Predicting crystal structure from X-ray diffraction(completed_1/34)
-|-- 2_ObjectDection_SIIM-FISABIO-RSNA COVID-19 Detection(completed_97/1324 - Top 8% - Bronze medal)
-|-- 3_Optiver_Realized_Volatility_Prediction (Progress_26/2895 (Top 1%_2021 Aug. 30))
-|-- 4_chaii_Hindi and Tamil Question and Answering (completed_75/959 - Top 8% - Bronze medal)
+|-- 1_Structured_Predicting crystal structure from X-ray diffraction(Ranked 1/34 in Private LB)
+|-- 2_ObjectDection_SIIM-FISABIO-RSNA COVID-19 Detection(Ranked_97/1324 - Top 8% - Bronze medal, but it is retracted due to my mistake)
+|-- 3_Optiver_Realized_Volatility_Prediction (Public LB was fine, but Private LB was awful)
+|-- 4_chaii_Hindi and Tamil Question and Answering (73/943 - Top 8% - Bronze medal is awared)
+|-- 5_PetFinder.my_Pawpularity Contest (170/3545 - Top 5% - Silver medal will be awared)
 ```
 
 ```
@@ -270,13 +271,16 @@ setInterval(ClickConnect,60000)
 
 #
 # List
-1. [Predicting crystal structure from X-ray diffraction](https://www.kaggle.com/c/nano281fa2020/overview) - Completed_1/34 (Inclass competition)
+1. [Predicting crystal structure from X-ray diffraction](https://www.kaggle.com/c/nano281fa2020/overview) - Ranked_1/34 (In-class competition)
 ![스크린샷 2021-08-17 오전 11 11 54](https://user-images.githubusercontent.com/58493928/129778735-5e7ac9e1-8c1f-4895-9f57-632f314d550d.png)
 ![스크린샷 2021-08-17 오전 11 12 10](https://user-images.githubusercontent.com/58493928/129778787-2e948ccb-1c14-475a-bddb-4e69faa24fef.png)
-2. [SIIM-FISABIO-RSNA COVID-19 Detection](https://www.kaggle.com/c/siim-covid19-detection/overview) - Completed_97/1324 (Top 8% - Bronze medal)
+2. [SIIM-FISABIO-RSNA COVID-19 Detection](https://www.kaggle.com/c/siim-covid19-detection/overview) - Ranked_97/1324 (Top 8% - Bronze medal, but retracted)
 ![스크린샷 2021-08-09 오후 7 41 36](https://user-images.githubusercontent.com/58493928/128800242-42e30f9b-159f-4a3c-8930-20f20839cac6.png)
 ![스크린샷 2021-08-09 오후 7 46 18](https://user-images.githubusercontent.com/58493928/128800584-f3748867-474f-4fcc-8a42-3e1f1b7c199d.png)
-3. [Optiver Realized Volatility Prediction](https://www.kaggle.com/c/optiver-realized-volatility-prediction/overview) - Progress_26/2895 (Top 1%_2021 Aug. 30)_
-4. [chaii - Hindi and Tamil Question and Answering](https://www.kaggle.com/c/chaii-hindi-and-tamil-question-answering) - Completed_75/959 (Top 8% - Bronze medal)
+3. [Optiver Realized Volatility Prediction](https://www.kaggle.com/c/optiver-realized-volatility-prediction/overview)
+4. [chaii - Hindi and Tamil Question and Answering](https://www.kaggle.com/c/chaii-hindi-and-tamil-question-answering) - Ranked 73/943 (Top 8% - Bronze medal)
 <img width="976" alt="스크린샷 2021-11-16 오후 12 04 52" src="https://user-images.githubusercontent.com/58493928/141985040-16aaa49d-4769-4b06-a35a-5ec23e776191.png">
 <img width="231" alt="스크린샷 2021-11-16 오후 12 09 37" src="https://user-images.githubusercontent.com/58493928/141985126-b68af798-123c-456f-a3eb-67ff64ea869e.png">
+5. [PetFinder.my - Pawpularity Contest]() - Ranked 170/3545 (Top 5% - Silver medal. Soon to be finalized)
+<img width="957" alt="스크린샷 2022-01-15 오후 8 33 09" src="https://user-images.githubusercontent.com/58493928/149621504-4dbf987d-ff57-4896-9859-6d892477b3c1.png">
+<img width="234" alt="스크린샷 2022-01-15 오후 8 33 40" src="https://user-images.githubusercontent.com/58493928/149621524-6fb0cf20-cdef-4fdd-8ee9-ab30d0a419a4.png">
