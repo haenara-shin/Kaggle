@@ -279,8 +279,8 @@ setInterval(ClickConnect,60000)
 ![스크린샷 2021-08-09 오후 7 46 18](https://user-images.githubusercontent.com/58493928/128800584-f3748867-474f-4fcc-8a42-3e1f1b7c199d.png)
 3. [Optiver Realized Volatility Prediction](https://www.kaggle.com/c/optiver-realized-volatility-prediction/overview)
 4. [chaii - Hindi and Tamil Question and Answering](https://www.kaggle.com/c/chaii-hindi-and-tamil-question-answering) - Ranked 73/943 (Top 8% - Bronze medal)
-<img width="976" alt="스크린샷 2021-11-16 오후 12 04 52" src="https://user-images.githubusercontent.com/58493928/141985040-16aaa49d-4769-4b06-a35a-5ec23e776191.png">
-<img width="231" alt="스크린샷 2021-11-16 오후 12 09 37" src="https://user-images.githubusercontent.com/58493928/141985126-b68af798-123c-456f-a3eb-67ff64ea869e.png">
+<img width="961" alt="Screen Shot 2021-12-29 at 11 44 06 AM" src="https://user-images.githubusercontent.com/58493928/147622717-65975a94-bd77-4266-a572-7afed37ffcc0.png">
+<img width="957" alt="Screen Shot 2021-12-29 at 11 48 18 AM" src="https://user-images.githubusercontent.com/58493928/147622847-252c258a-f375-493c-a643-5cd1c8cc73cc.png">
 5. [PetFinder.my - Pawpularity Contest]() - Ranked 170/3545 (Top 5% - Silver medal. Soon to be finalized)
 <img width="957" alt="스크린샷 2022-01-15 오후 8 33 09" src="https://user-images.githubusercontent.com/58493928/149621504-4dbf987d-ff57-4896-9859-6d892477b3c1.png">
 <img width="234" alt="스크린샷 2022-01-15 오후 8 33 40" src="https://user-images.githubusercontent.com/58493928/149621524-6fb0cf20-cdef-4fdd-8ee9-ab30d0a419a4.png">
