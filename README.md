@@ -5,7 +5,7 @@
 |-- 2_ObjectDection_SIIM-FISABIO-RSNA COVID-19 Detection(Ranked_97/1324 - Top 8% - Bronze medal, but it is retracted due to my mistake)
 |-- 3_Optiver_Realized_Volatility_Prediction (Public LB was fine, but Private LB was awful)
 |-- 4_chaii_Hindi and Tamil Question and Answering (73/943 - Top 8% - Bronze medal is awared)
-|-- 5_PetFinder.my_Pawpularity Contest (170/3545 - Top 5% - Silver medal will be awared)
+|-- 5_PetFinder.my_Pawpularity Contest (165/3537 - Top 5% - Silver medal is awared)
 ```
 
 ```
@@ -281,6 +281,6 @@ setInterval(ClickConnect,60000)
 4. [chaii - Hindi and Tamil Question and Answering](https://www.kaggle.com/c/chaii-hindi-and-tamil-question-answering) - Ranked 73/943 (Top 8% - Bronze medal)
 <img width="961" alt="Screen Shot 2021-12-29 at 11 44 06 AM" src="https://user-images.githubusercontent.com/58493928/147622717-65975a94-bd77-4266-a572-7afed37ffcc0.png">
 <img width="233" alt="Screen Shot 2021-12-29 at 11 45 07 AM" src="https://user-images.githubusercontent.com/58493928/147622780-762ac11a-94e1-45f6-923c-802e59b48955.png">
-5. [PetFinder.my - Pawpularity Contest]() - Ranked 170/3545 (Top 5% - Silver medal. Soon to be finalized)
+5. [PetFinder.my - Pawpularity Contest]() - Ranked 165/3537 (Top 5% - Silver medal)
 <img width="957" alt="스크린샷 2022-01-15 오후 8 33 09" src="https://user-images.githubusercontent.com/58493928/149621504-4dbf987d-ff57-4896-9859-6d892477b3c1.png">
 <img width="234" alt="스크린샷 2022-01-15 오후 8 33 40" src="https://user-images.githubusercontent.com/58493928/149621524-6fb0cf20-cdef-4fdd-8ee9-ab30d0a419a4.png">
