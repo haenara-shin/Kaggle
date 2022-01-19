@@ -3,7 +3,7 @@
 
 ```bash
 |-- README.md
-|-- Finalized. Soon to be updated.
+|-- Ranked 73/943 (Top 8%) - Bronze medal is awarded.
 # |-- TabNet.md
 # |-- Realized Volitility(ref1).md
 ```
