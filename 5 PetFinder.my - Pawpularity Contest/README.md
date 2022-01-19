@@ -3,13 +3,13 @@
 
 ```bash
 |-- README.md
-|-- Will be finalized soon and will be updated.
+|-- Ranked 165/3537 (Top 5%) - Silver medal is awarded.
 # |-- FastAi.md
 ```
 
 # [PetFinder.my - Pawpularity Contest](https://www.kaggle.com/c/petfinder-pawpularity-score)
 - 2021.Sept ~ 2022.Jan (completed)
-  - 170/3545 (Top 5% - Silver medal)
+  - 165/3537 (Top 5% - Silver medal)
 - Host
   - PetFinder.my: Malaysia's leading animal welfare platform company
 - Goal
