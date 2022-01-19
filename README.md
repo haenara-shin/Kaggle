@@ -1,6 +1,6 @@
 # Kaggle
 ![competition](https://road-to-kaggle-grandmaster.vercel.app/api/badges/haenara/competition)
-- I become a Kaggle Expert and join the ranking in the Code competition section on Jan. 19, 2022. For the time being, I will not participate in any competition due to just focusing on the newly started graduate programs. However, this won't be long.
+- I become a Kaggle Expert and join the ranking in the Code competition section on Jan. 19, 2022. For the time being, I will not participate in any competition due to just focusing on the newly started programs. However, this won't be long.
 
 
 ```bash
