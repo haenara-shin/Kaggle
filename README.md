@@ -1,4 +1,6 @@
 # Kaggle
+- I become a Kaggle Expert and join the ranking in the Code competition section on Jan. 19, 2022. For the time being, I will not participate in any competition due to just focusing on the newly started graduate programs. However, this won't be long.
+![competition](https://road-to-kaggle-grandmaster.vercel.app/api/badges/haenara/competition)
 
 ```bash
 |-- 1_Structured_Predicting crystal structure from X-ray diffraction(Ranked 1/34 in Private LB)
